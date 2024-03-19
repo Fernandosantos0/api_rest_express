@@ -4,8 +4,12 @@ dotenv.config();
 /* Conexão com o banco */
 import './src/database';
 
+/* Importando o framework express */
 import express from 'express';
+
+/* Importando os arquivos de roteamentos */
 import homeRoutes from './src/routes/homeRoutes';
+import userRoutes from './src/routes/userRoutes';
 
 class App {
     constructor() {
@@ -23,6 +27,7 @@ class App {
 
     routes() {
         this.app.use('/', homeRoutes);
+        this.app.use('/users/', userRoutes);
     }
 }
 
